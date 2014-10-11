@@ -1,0 +1,23 @@
+{
+  "name": "MyGarden",
+  "version": "0.0.0",
+  "description": "Garden for Wildlife",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "~4.9.x"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ishg/Team12"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ],
+}
