@@ -52,7 +52,6 @@ garden.controller('QuesCtrl',function($scope,$http){
 		$http.post('/api/answer',$scope.formData)
 			.success(function(data){
 				console.log(data);
-				$scope.$apply();
 			})
 			.error(function(){
 				console.log("ERROR: " + data);

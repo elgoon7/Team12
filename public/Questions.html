@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html ng-app="garden">
 	<head>
 		<title>Questions</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -10,6 +10,9 @@
 		<script src="js/jquery.dropotron.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
+        <script src="js/angular.js"></script>
+        <script src="js/angular-route.js"></script>
+        <script src="js/app.js"></script>
 		<script src="js/init.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
@@ -18,7 +21,7 @@
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
-	<body class="left-sidebar">
+	<body class="left-sidebar" ng-controller="QuesCtrl">
 
 		<!-- Header -->
 			<div id="header-wrapper">
@@ -26,16 +29,16 @@
 					
                 <!-- Logo -->
                 	<img src="images/NWF.jpg" alt="" />
-                    <h1><a href="index.html">My Garden</a></h1>
+                    <h1><a href="/">My Garden</a></h1>
 
                 <!-- Nav -->
                     <nav id="nav">
                         <ul>
-                       		<li><a href="Index.html">Home</a></li>
- 			                <li><a href="Recommendations.html">Recommendations</a></li>
- 			                <li class="current"><a href="Questions.html">FAQ</a></li>
-                            <li><a href="SuccessStories.html">Success Stories</a></li>
-                            <li><a href="Profile.html">My Profile</a></li>
+                       		<li><a href="/">Home</a></li>
+ 			                <li><a href="/recommendations">Recommendations</a></li>
+ 			                <li class="current"><a href="/questions">FAQ</a></li>
+                            <li><a href="/success">Success Stories</a></li>
+                            <li><a href="/profile">My Profile</a></li>
                             <li>Sign In</a></li>
                         </ul>
                     </nav>
@@ -56,7 +59,7 @@
 									</header>
                                     <p>My Garden is a question and answer forum for experienced and new gardeners alike.  It is the National Wildlife Federation's goal to create better global gardening community, and that starts with you! My Garden connects you with other gardeners who can answer your questions based on their experiences!</p><p>Feel free to ask a question or learn more about the N.W.F's Gardening for Wildlife Program.</p>
 									<ul class="divided">
-										<li><a href="#" class="button icon fa-file-text">Ask a Question</a></li>
+										<li><a href="/ask" class="button icon fa-file-text">Ask a Question</a></li>
 										<li><a href="http://www.nwf.org/How-to-Help/Garden-for-Wildlife/Certify-Your-Wildlife-Garden.aspx?campaignid=WH09ASLP&s_src=CWH_GoogleMini_gardening" class="button alt">Gardening for Wildlife</a></li>
 									</ul>
 								</section>
@@ -65,68 +68,26 @@
 						<div class="8u skel-cell-important">
 							
 							<!-- Content -->
+                            <header class="major">
+                                <h2>Questions</h2>
+                            </header>
                             <section>
-                                <header class="major">
-                                    <h2>Questions</h2>
-                                </header>
-                                <section class="box">
+                                <section class="box" ng-repeat="q in questions.data">
                                     <header>
-                                            <h2>Migratory Patterns</h2>
+                                            <h2>{{q.title}}</h2>
                                     </header>
                                     <div class="row">
                                         <div class="2u">
                                             <div class="mini-counts">
-                                                <span title="0 votes">0</span>
+                                                <span>{{q.votes}} votes</span>
                                             </div>
-                                            <div>votes</div>
                                             <div class="mini-counts">
-                                                <span title="3 views">3</span>
+                                                <span >{{q.views}} views</span>
                                             </div>
-                                            <div>views</div>
                                         </div>
                                         <div class="10u">
-                                            <p>I'm thinking we MIGHT have a bad winter coming. So far today I have seen a male and female downy, a flicker, a red bellied woodpecker, and another woodpecker I couldn't get a good enough look at to identify. This is very unusual for this time of year where I live!  <a href="#">Find out more</a></p>
-                                        </div>    	
-                                    </div>
-                                </section>
-                                <section class="box">
-                                    <header>
-                                            <h3>Migratory Patterns</h3>
-                                    </header>
-                                    <div class="row">
-                                        <div class="2u">
-                                            <div class="mini-counts">
-                                                <span title="0 votes">0</span>
-                                            </div>
-                                            <div>votes</div>
-                                            <div class="mini-counts">
-                                                <span title="3 views">3</span>
-                                            </div>
-                                            <div>views</div>
-                                        </div>
-                                        <div class="10u">
-                                            <p>I'm thinking we MIGHT have a bad winter coming. So far today I have seen a male and female downy, a flicker, a red bellied woodpecker, and another woodpecker I couldn't get a good enough look at to identify. This is very unusual for this time of year where I live!  <a href="#">Find out more</a></p>
-                                        </div>     	
-                                    </div>
-                                </section>
-                                <section class="box">
-                                    <header>
-                                            <h3>Migratory Patterns</h3>
-                                    </header>
-                                    <div class="row">
-                                        <div class="2u">
-                                            <div class="mini-counts">
-                                                <span title="0 votes">0</span>
-                                            </div>
-                                            <div>votes</div>
-                                            <div class="mini-counts">
-                                                <span title="3 views">3</span>
-                                            </div>
-                                            <div>views</div>
-                                        </div>
-                                        <div class="10u">
-                                            <p>I'm thinking we MIGHT have a bad winter coming. So far today I have seen a male and female downy, a flicker, a red bellied woodpecker, and another woodpecker I couldn't get a good enough look at to identify. This is very unusual for this time of year where I live!  <a href="#">Find out more</a></p>
-                                        </div>    	
+                                            <p>{{q.body}}&nbsp;<a ng-click="getQuestion(q.id)" href="#">Find out more</a></p>
+                                        </div>      
                                     </div>
                                 </section>
                             </section>

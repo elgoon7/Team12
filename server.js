@@ -21,14 +21,20 @@ app.get('/', function(req, res) {
 app.get('/ask',function(req,res){
 	res.sendFile(path.join(__dirname,'/public/ask.html'))
 });
-app.get('/write',function(req,res){
-	res.sendFile(path.join(__dirname,'/public/writeStory.html'))
+app.get('/recommendations',function(req,res){
+	res.sendFile(path.join(__dirname,'/public/Recommendations.html'))
 });
 app.get('/questions',function(req,res){
-	res.sendFile(path.join(__dirname,'/public/questions.html'))
+	res.sendFile(path.join(__dirname,'/public/Questions.html'))
 });
 app.get('/answer',function(req,res){
 	res.sendFile(path.join(__dirname,'/public/answer.html'))
+});
+app.get('/profile',function(req,res){
+	res.sendFile(path.join(__dirname,'/public/Profile.html'))
+});
+app.get('/success',function(req,res){
+	res.sendFile(path.join(__dirname,'/public/SuccessStories.html'))
 });
 
 
