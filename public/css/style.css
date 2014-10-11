@@ -694,7 +694,7 @@
 
 	#banner
 	{
-		background-image: url('images/DeerWoods.png');
+		background-image: url('images/homepage.jpg');
 		background-position: center center;
 		background-size: 100%;
 		background-repeat: no-repeat;
@@ -702,15 +702,15 @@
 	}
 	#banner header h2
 	{
-		color: #d52349;
+		color: white;
 		font-weight: 900;
 	}
 			
 	#banner header p
 	{
-		color: #FF0033;
+		color: white;
 		padding: 10;
-		font-style: normal;
+		font-style: bold;
 		margin: 0;
 	}
 
