@@ -11,7 +11,6 @@ app.use('/js',express.static(__dirname+'/public/js'));
 app.use('/images',express.static(__dirname+'/public/images'));
 app.use('/fonts',express.static(__dirname+'/public/fonts'));
 app.use('/ie',express.static(__dirname+'/public/ie'));
-app.use('/css/images',express.static(__dirname+'/public/css/images'));
 
 app.use(bodyParser.json());
 
@@ -21,6 +20,9 @@ app.get('/', function(req, res) {
 });
 app.get('/ask',function(req,res){
 	res.sendFile(path.join(__dirname,'/public/ask.html'))
+});
+app.get('/write',function(req,res){
+	res.sendFile(path.join(__dirname,'/public/writeStory.html'))
 });
 app.get('/questions',function(req,res){
 	res.sendFile(path.join(__dirname,'/public/questions.html'))

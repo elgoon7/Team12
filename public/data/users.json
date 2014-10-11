@@ -1,0 +1,19 @@
+{
+	"data":
+	[
+		{
+			"user_id":1,
+			"name": "Danielle Brigida",
+			"rep": 29,
+			"certified":"true",
+			"zipcode":43210
+		},
+		{
+			"user_id":2,
+			"name": "Bruce Wayne",
+			"rep": 9000,
+			"certified":"false",
+			"zipcode": 92101
+		}
+	]
+}

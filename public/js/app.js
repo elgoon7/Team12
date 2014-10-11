@@ -1,5 +1,3 @@
-Parse.initialize("LY5iATdLIuH4GFTvqixSEAHc7DhMg4MNjBQ8xbfF", "WnB1d4B6nukwaLNMamXM9VkxRBQugTNXnIPhliLp");
-
 var garden = angular.module('garden',['ngRoute']);
 
 garden.controller('UserCtrl',function($scop,$http){
