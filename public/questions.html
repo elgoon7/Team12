@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+
+<html ng-app="garden">
+
+<html>
+
+	<head>
+		<title>Questions</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+        <script src="js/angular.js"></script>
+        <script src="js/angular-route.js"></script>
+        <script src="js/app.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body class="left-sidebar" ng-controller="QuesCtrl">
+
+		<!-- Header -->
+			<div id="header-wrapper">
+				<div id="header">
+					
+                <!-- Logo -->
+                    <h1><a href="index.html">Questions</a></h1>
+
+                <!-- Nav -->
+                    <nav id="nav">
+                        <ul>
+                            <li class="current"><a href="Index.html">Home</a></li>
+                         	<li><a href="MyGarden.html">My Garden</a></li>
+                          	<li><a href="SuccessStories.html">Success Stories</a></li>
+                            <li><a href="Questions.html">Questions</a></li>
+                        </ul>
+                    </nav>
+                    
+				</div>
+			</div>
+		
+		<!-- Main -->
+			<div id="main-wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="4u">
+						
+							<!-- Sidebar -->
+								<section class="box">
+									<header>
+										<h3>Our Mission</h3>
+									</header>
+                                    <p>My Garden is a question and answer forum for experienced and new gardeners alike.  It is the National Wildlife Federation's goal to create better global gardening community, and that starts with you! My Garden connects you with other gardeners who can answer your questions based on their experiences!</p><p>Feel free to ask a question or learn more about the N.W.F's Gardening for Wildlife Program.</p>
+									<ul class="divided">
+										<li><a href="/ask" class="button icon fa-file-text">Ask a Question</a></li>
+										<li><a href="http://www.nwf.org/How-to-Help/Garden-for-Wildlife/Certify-Your-Wildlife-Garden.aspx?campaignid=WH09ASLP&s_src=CWH_GoogleMini_gardening" class="button alt">Gardening for Wildlife</a></li>
+									</ul>
+								</section>
+
+						</div>
+						<div class="8u">
+							
+							<!-- Content -->
+                            <header class="major">
+                                <h2>Questions</h2>
+                            </header>
+                            <section>
+                                
+                                <section class="box" ng-repeat="q in questions.data">
+                                    <header>
+                                            <h2>{{q.title}}</h2>
+                                    </header>
+                                    <div class="row">
+                                        <div class="2u">
+                                            <div class="mini-counts">
+                                                <span>{{q.votes}} votes</span>
+                                            </div>
+                                            <div class="mini-counts">
+                                                <span >{{q.views}} views</span>
+                                            </div>
+                                        </div>
+                                        <div class="10u">
+                                            <p>{{q.body}}&nbsp;<a href="#">Find out more</a></p>
+                                        </div>    	
+                                    </div>
+                                </section>
+                            </section>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<!-- Footer -->
+			<div id="footer-wrapper">
+				<section id="footer" class="container">
+					
+						
+					<div class="row">
+						<div class="12u">
+													
+                        <!-- Copyright -->
+                            <div id="copyright">
+                                <ul class="links">
+                                    <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                                </ul>
+                            </div>
+
+						</div>
+					</div>
+				</section>
+			</div>
+			
+	</body>
+</html>

@@ -1,0 +1,59 @@
+{
+	"data":
+[ 
+	{ 
+		"title" : "Maintainence",
+		"body" : "Any maintanence tips on Caesalpinia mexicana?",
+		"date" : "9/13/14", 
+		"tags" : "4",
+		"author" : "Mark Zuckerberg", 
+		"votes" : 8, 
+		"views" : 4, 
+		"answers" : 
+		[ 
+			{
+				"body" : "Plant Mexican Bird of Paradise in the fall in full sun. This large shrub is evergreen in mild climates, but where frost occurs it will shed foliage. Extremely tolerant of sun and reflected heat, supplement with one watering per week but while it flowers. Needs good drainage.",
+				"author" : "Greg Hock", 
+				"answer_votes" : 14
+			}
+		]
+
+	},
+	{ 
+		"title" : "Strawberries!",
+		"body" : "Any native shrubs to grow strawberries?",
+		"date" : "10/7/14", 
+		"tags" : "3",
+		"author" : "Cristiano Ronaldo", 
+		"votes" : 60, 
+		"views" : 80, 
+		"answers" : 
+		[ 
+			{
+				"body" : "Fragaria chiloensis! Beach Strawberry. Great food a nectar source for wild life and easy to grow.",
+				"author" : "Jose Santana", 
+				"answer_votes" : 14
+			}
+		]
+
+	},
+	{ 
+		"title" : "Need some wildlife",
+		"body" : "Hi! Am looking to add some variety in my garden and would like something that'll welcome some species.",
+		"date" : "10/9/14", 
+		"tags" : "4",
+		"author" : "Sheryl Smith", 
+		"votes" : 15, 
+		"views" : 2, 
+		"answers" : 
+		[ 
+			{
+				"body" : "Lobelia cardinalis aka Fried Green TomatoesCardinal Flower. Tremendous source of nector for hummingbirds and swallowtail butterflies",
+				"author" : "John Clay", 
+				"answer_votes" : 17
+			}
+		]
+
+	}
+]
+}
