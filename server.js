@@ -27,6 +27,9 @@ app.get('/write',function(req,res){
 app.get('/questions',function(req,res){
 	res.sendFile(path.join(__dirname,'/public/questions.html'))
 });
+app.get('/answer',function(req,res){
+	res.sendFile(path.join(__dirname,'/public/answer.html'))
+});
 
 
 //Api
@@ -42,6 +45,7 @@ app.get('/api/questions',function(req,res){
 		res.send(json);
 	});
 });
+
 
 
 var date = new Date();
@@ -67,6 +71,30 @@ app.post('/api/ask',function(req,res){
 			"votes" : 0, 
 			"views" : 0, 
 			"answers" : []
+		};
+
+		fs.writeFile(file, JSON.stringify(json,undefined,2), function (err) {
+			if (err) throw err;
+		});
+	});
+
+	res.send("OK");
+});
+
+app.post('/api/answer',function(req,res){
+	var file = __dirname + '/public/data/data_43210.json';
+	var json;
+	fs.readFile(file, 'utf8', function (err, data) {
+		if (err) {
+			console.log('Error: ' + err);
+			return;
+		}
+		json = JSON.parse(data);
+		var length = json.data[1].answers.length;
+		json.data[1].answers[length] = { 
+			"body" : req.body.body,
+			"author" : "Danielle Brigida", 
+			"answer_votes" : 0,
 		};
 
 		fs.writeFile(file, JSON.stringify(json,undefined,2), function (err) {

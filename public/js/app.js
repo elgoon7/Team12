@@ -1,5 +1,4 @@
 var garden = angular.module('garden',['ngRoute']);
-
 garden.controller('UserCtrl',function($scop,$http){
 
 
@@ -37,6 +36,7 @@ garden.controller('AskCtrl',function($scope,$http){
 
 garden.controller('QuesCtrl',function($scope,$http){
 	var get_url = '/api/questions';
+	$scope.formData = {};
 	$http.get(get_url)
 		.success(function(data){
 			$scope.questions = data;
@@ -44,7 +44,22 @@ garden.controller('QuesCtrl',function($scope,$http){
 		.error(function(data){
 			console.log("ERROR: "+ data);
 		});
+	$scope.getQuestion = function(id){
+		$scope.q_id = id;
+		window.location.replace("/answer");
+	}
+	$scope.addAnswer = function(){
+		$http.post('/api/answer',$scope.formData)
+			.success(function(data){
+				console.log(data);
+				$scope.$apply();
+			})
+			.error(function(){
+				console.log("ERROR: " + data);
+			});
+	}
 });
+
 
 garden.controller('StoryCtrl',function($scope,$http){
 

@@ -66,14 +66,28 @@
 						</div>
 						<div class="8u">
 							<!-- Content -->
-                            <section class="box" ng-model="">
+                            <section  class="box" ng-repeat="q in questions.data | filter:{ id: 2 }:true">
                                 <header>
                                     <h2>{{q.title}}</h2>
+                                    <p><b>{{q.author}}</b></p>
                                 </header>
                                 <div class="row">
-                                     	
+                                     <p>{{q.body}}</p>
+                                </div>
+                                <div class="row" ng-repeat="a in q.answers">
+                                 	<section>
+	                                 	<h3><span style="color:#D52349;">{{a.answer_votes}}&nbsp;Points&nbsp;</span>{{a.author}}</h3>
+	                                 	<p>{{a.body}}</p>
+	                                 	<a href="" class="icon fa-plus">&nbsp;Agree</a>&nbsp;&nbsp;
+	                                 	<a href="" class="icon fa-minus">&nbsp;Disagree</a>
+                                 	</section>
                                 </div>
                             </section>
+                            <form class="form" ng-submit="addAnswer()">
+                        		<textarea  placeholder="Answer the question here" cols="40" rows="4" ng-model="formData.body"></textarea>
+                        		<br/>
+								<input type="submit" value="Answer">
+                        	</form>
 						</div>
 					</div>
 				</div>
