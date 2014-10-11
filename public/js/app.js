@@ -35,13 +35,22 @@ garden.controller('AskCtrl',function($scope,$http){
 
 });
 
+garden.controller('QuesCtrl',function($scope,$http){
+	var get_url = '/api/questions';
+	$http.get(get_url)
+		.success(function(data){
+			$scope.questions = data;
+		})
+		.error(function(data){
+			console.log("ERROR: "+ data);
+		});
+});
+
 garden.controller('StoryCtrl',function($scope,$http){
 
 });
 
-garden.controller('QuesCtrl',function($scope,$http){
 
-});
 
 
 
