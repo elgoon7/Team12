@@ -41,8 +41,8 @@ app.get('/api/questions',function(req,res){
 	});
 });
 
+
 var date = new Date();
-//date = date.now();
 dd = date.getDate();
 mm = date.getMonth() + 1;
 yy = date.getFullYear();

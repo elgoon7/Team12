@@ -1,4 +1,11 @@
+Parse.initialize("LY5iATdLIuH4GFTvqixSEAHc7DhMg4MNjBQ8xbfF", "WnB1d4B6nukwaLNMamXM9VkxRBQugTNXnIPhliLp");
+
 var garden = angular.module('garden',['ngRoute']);
+
+garden.controller('UserCtrl',function($scop,$http){
+
+
+});
 
 garden.controller('MainCtrl',function($scope,$http){
 	$scope.formData = {};
@@ -27,6 +34,14 @@ garden.controller('AskCtrl',function($scope,$http){
 				console.log("ERROR: " + data);
 			});
 	};
+
+});
+
+garden.controller('StoryCtrl',function($scope,$http){
+
+});
+
+garden.controller('QuesCtrl',function($scope,$http){
 
 });
 
