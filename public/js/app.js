@@ -1,7 +1,6 @@
-var hercules = angular.module('hercules',['ngRoute']);
-var gym = '?name=ymca';
+var garden = angular.module('garden',['ngRoute']);
 
-hercules.controller('MainCtrl',function($scope,$http){
+garden.controller('MainCtrl',function($scope,$http){
 	$scope.formData = {};
 	var get_url = '/api/gym'+ gym;
 	$http.get(get_url)
@@ -16,23 +15,12 @@ hercules.controller('MainCtrl',function($scope,$http){
 
 });
 
-hercules.controller('GymCtrl',function($scope,$http){
+garden.controller('AskCtrl',function($scope,$http){
 	$scope.formData = {};
-	$scope.createGym = function(){
-		$http.post('/api/gym',$scope.formData)
+	$scope.askQuestion = function(){
+		$http.post('/api/ask',$scope.formData)
 			.success(function(data){
-				$scope.formData = {};
-				console.log(data);
-			})
-			.error(function(){
-				console.log("ERROR: " + data);
-			});
-	};
-
-	$scope.createUser = function(){
-		$scope.formData = {};
-		$http.post('/api/user',$scope.formData)
-			.success(function(data){
+				//window.location.replace("/questions.html");
 				console.log(data);
 			})
 			.error(function(){
