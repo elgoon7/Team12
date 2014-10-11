@@ -29,33 +29,50 @@ app.get('/questions',function(req,res){
 
 //Api
 app.get('/api/questions',function(req,res){
-	//Open the db
-	console.log(req.query.name);
-	var db = new sqlite3.Database('public/hercules.db');
-	db.serialize(function(){
-		var stmt = 'SELECT * FROM gym WHERE name="'+req.query.name+'"';
-		db.each(stmt,function(err,row){
-			res.json(row);
-		})
-	});
-	db.close();
-});
-
-app.post('/api/ask',function(req,res){
-	var file = __dirname + '/public/data/test.json';
-	var dataf;
+	var file = __dirname + '/public/data/data_43210.json';
+	var json;
 	fs.readFile(file, 'utf8', function (err, data) {
 		if (err) {
 			console.log('Error: ' + err);
 			return;
 		}
-		dataf = JSON.parse(data);
-		console.log(dataf);
-		dataf.data[2] = {"name":req.body.title,"text":req.body.body};
-		console.log(dataf);
+		json = JSON.parse(data);
+		res.send(json);
+	});
+});
+
+var date = new Date();
+//date = date.now();
+dd = date.getDate();
+mm = date.getMonth() + 1;
+yy = date.getFullYear();
+
+app.post('/api/ask',function(req,res){
+	var file = __dirname + '/public/data/data_43210.json';
+	var json;
+	fs.readFile(file, 'utf8', function (err, data) {
+		if (err) {
+			console.log('Error: ' + err);
+			return;
+		}
+		json = JSON.parse(data);
+		var length = json.data.length;
+		json.data[length] = { 
+			"title" : req.body.title,
+			"body" : req.body.body,
+			"date" : ""+mm+"/"+dd+"/"+yy, 
+			"author" : "Danielle Brigida", 
+			"votes" : 0, 
+			"views" : 0, 
+			"answers" : []
+		};
+
+		fs.writeFile(file, JSON.stringify(json,undefined,2), function (err) {
+			if (err) throw err;
+		});
 	});
 
-	res.send("JSON.stringify(dataf)");
+	res.send("OK");
 });
 
 

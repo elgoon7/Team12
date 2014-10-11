@@ -20,7 +20,7 @@ garden.controller('AskCtrl',function($scope,$http){
 	$scope.askQuestion = function(){
 		$http.post('/api/ask',$scope.formData)
 			.success(function(data){
-				//window.location.replace("/questions.html");
+				window.location.replace("/questions");
 				console.log(data);
 			})
 			.error(function(){
